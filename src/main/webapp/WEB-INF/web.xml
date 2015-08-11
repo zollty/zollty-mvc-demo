@@ -1,0 +1,44 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+      version="2.5">
+
+	<!-- 指定ZolltyMVC配置文件的路径 -->
+	<!-- ！可省略该配置，默认为classpath下面的zollty-mvc.xml文件 -->
+	<!-- ！也支持指定类似于 zolltymvc.properties 这种properties格式的配置文件，甚至还支持自己去实现IApplicationConfig接口 -->
+	<context-param>
+		<param-name>_zollty_mvc_context</param-name>
+		<param-value>classpath:zollty-mvc.xml</param-value>
+	</context-param>
+	
+	<!-- 配置ContextLoaderListener，用于初始化WebApplicationContext，得到整个应用的信息 -->
+	<!-- ！该配置也可以省略，下面的DispatcherServlet能够承担初始化的工作 -->
+	<!-- <listener>
+		<listener-class>org.zollty.framework.mvc.ContextLoaderListener</listener-class>
+	</listener> -->
+	
+	<!-- 配置MVC的访问入口，该配置不能省略！且建议在容器启动时对Servlet进行初始化 -->
+	<servlet>
+		<servlet-name>zolltyMVC</servlet-name>
+		<servlet-class>org.zollty.framework.mvc.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- 
+	<servlet>
+		<servlet-name>zolltyMVC</servlet-name>
+		<servlet-class>com.zollty.mvcdemo.lesson1.TestServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	 -->
+	<servlet-mapping>
+		<servlet-name>zolltyMVC</servlet-name>
+		<url-pattern>/</url-pattern> <!-- 拦截所有的URI，建议加上前缀，比如 /app/*，【可配置多个url-pattern】 -->
+	</servlet-mapping>
+	
+	
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+</web-app>

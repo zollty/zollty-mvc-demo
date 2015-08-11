@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.zollty.org/mvc/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.zollty.org/mvc/schema/beans http://blog.zollty.com/res/zolltymvc-beans-1.0.xsd">
+	
+	<!-- 指定class的扫描路径（用于识别注解配置），【支持多个配置，支持扫描jar包】 -->
+	<component-scan base-package="com.zollty.mvcdemo" />
+	
+	<!-- 指定视图的路径的前缀，以及视图的编码，【可省略该配置，默认为/WEB-INF/views，UTF-8】 -->
+	<mvc view-path="/WEB-INF/views" view-encoding="UTF-8" />
+
+	<!-- 配置 排除拦截的URI 的前缀和后缀 -->
+	<no-intercept prefix="/resources/,/pages/" suffix=".jsp,.html,.js,.css,.png,.jpg,.gif" />
+	
+	<!-- 绑定外部的日志处理器（可以自定义），【可省略该配置，默认为org.zollty.log.ConsoleLogger】 -->
+	<logger class="org.zollty.log.Log4jLogger" level="TRACE" />
+	
+	<!-- 使用自定义的error页面，【可省略该配置，默认用ZolltyMVC自动生成的HTML页面】 -->
+	<!-- <errorPage path="/error.jsp" /> -->
+
+	<!-- 引入其他配置文件，【支持多个配置】 -->
+	<import resource="classpath:external-beans.xml" />
+	<import resource="classpath:unittest-beans.xml" />
+
+</beans>
