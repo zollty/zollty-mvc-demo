@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.zollty.org/mvc/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.zollty.org/mvc/schema/beans http://assets.zollty.com/misc/p/schema/zolltymvc-beans-1.0.xsd">
+<beans xmlns="http://www.zollty.org/mvc/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.zollty.org/mvc/schema/beans 
+  http://assets.zollty.com/misc/p/schema/zolltymvc-beans-1.2.xsd">
 
-	<!-- 定义一个假数据源 -->
-	<bean id="dataSource" class="com.zollty.mvcdemo.methodbean.DataSourceCreator#getDataSource">
-		<property name="name" value="jdbc/zollty"></property>
-	</bean>
-	
-	<import resource="classpath:unittest-beans-2.xml" />
+  <!-- 定义一个假数据源 -->
+  <bean id="dataSource" class="com.zollty.mvcdemo.methodbean.DataSourceCreator#getDataSource">
+    <property name="name" value="jdbc/zollty"></property>
+  </bean>
+
+  <import resource="classpath:unittest-beans-2.xml" />
 	
 </beans>

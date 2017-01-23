@@ -10,7 +10,7 @@ import org.zollty.framework.mvc.annotation.Controller;
 import org.zollty.framework.mvc.annotation.HttpParam;
 import org.zollty.framework.mvc.annotation.RequestMapping;
 import org.zollty.framework.mvc.view.TextView;
-import org.zollty.util.StringUtils;
+import org.jretty.util.StringUtils;
 
 import com.zollty.mvcdemo.lesson1.vo.RegistVO;
 

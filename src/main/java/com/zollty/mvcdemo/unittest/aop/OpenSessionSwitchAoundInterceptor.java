@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.zollty.framework.mvc.View;
 import org.zollty.framework.mvc.aop.MvcAround;
 import org.zollty.framework.mvc.aop.MvcJoinPoint;
-import org.zollty.util.ThreadUtils;
+import org.jretty.util.ThreadUtils;
 
 public class OpenSessionSwitchAoundInterceptor implements MvcAround {
 

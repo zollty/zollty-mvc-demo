@@ -1,7 +1,8 @@
 package com.zollty.mvcdemo.unittest.di;
 
+import java.util.Map;
+
 import org.junit.Test;
-import org.zollty.framework.core.beans.BeanDefinition;
 import org.zollty.framework.core.beans.ConfigurableBeanFactory;
 import org.zollty.framework.core.config.impl.DefaultXmlConfig;
 import org.zollty.framework.core.context.ApplicationContext;
@@ -14,8 +15,8 @@ public class NotWebDiTest {
     
     @Test
     public void test(){
-        for(BeanDefinition def: appContext.getBeanDefinitions()) {
-            System.out.println(def.getClassName()+": "+def.getId());
+        for(Map.Entry<String, Object> entry : appContext.getBeanMap().entrySet()) {
+            System.out.println(entry.getValue().getClass().getName()+": "+entry.getKey());
         }
         
         System.out.println("----------------------------------------");

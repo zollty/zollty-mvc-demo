@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.zollty.org/mvc/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.zollty.org/mvc/schema/beans http://assets.zollty.com/misc/p/schema/zolltymvc-beans-1.0.xsd">
+<beans xmlns="http://www.zollty.org/mvc/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.zollty.org/mvc/schema/beans 
+  http://assets.zollty.com/misc/p/schema/zolltymvc-beans-1.2.xsd">
 
-	<bean id="stuZollty" class="com.zollty.mvcdemo.unittest.bean.entity.Student">
-		<property name="name" value="zollty" />
-		<property name="age" value="26" />
-		<property name="sex" value="M" />
-		<property name="time" value="1364455421" />
-		<!-- 依赖注入 另外一个bean实例 -->
-		<property name="clasz" ref="clasz0732" />
+  <bean id="stuZollty" class="com.zollty.mvcdemo.unittest.bean.entity.Student">
+    <property name="name" value="zollty" />
+    <property name="age" value="26" />
+    <property name="sex" value="M" />
+    <property name="time" value="1364455421" />
+    <!-- 依赖注入 另外一个bean实例 -->
+    <property name="clasz" ref="clasz0732" />
 
-		<!-- 给 java.util.List 赋值 -->
-		<property name="books">
-			<!-- Type如果省略，则根据setter方法的参数类型自动获取 -->
-			<list type="java.util.ArrayList">
-				<!-- 指定value类型，用于类型转换，比如int类型 -->
-				<value type="java.lang.String">spring</value>
-				<value type="java.lang.String">docker</value>
-			</list>
-		</property>
+    <!-- 给 java.util.List 赋值 -->
+    <property name="books">
+      <!-- Type如果省略，则根据setter方法的参数类型自动获取 -->
+      <list type="java.util.ArrayList">
+        <!-- 指定value类型，用于类型转换，比如int类型 -->
+        <value type="java.lang.String">spring</value>
+        <value type="java.lang.String">docker</value>
+      </list>
+    </property>
 
-		<property name="allClasses">
-			<list>
-				<ref bean="clasz0732" />
-				<ref bean="clasz0731" />
-			</list>
-		</property>
-	</bean>
+    <property name="allClasses">
+      <list>
+        <ref bean="clasz0732" />
+        <ref bean="clasz0731" />
+      </list>
+    </property>
+  </bean>
 
-	<bean id="clasz0731" class="com.zollty.mvcdemo.unittest.bean.entity.Class">
-		<property name="id" value="10045348540" />
-		<property name="name" value="07-3-1" />
-	</bean>
+  <bean id="clasz0731" class="com.zollty.mvcdemo.unittest.bean.entity.Class">
+    <property name="id" value="10045348540" />
+    <property name="name" value="07-3-1" />
+  </bean>
 
-	<bean id="methodCreateStu"
-		class="com.zollty.mvcdemo.unittest.di.DiTestController#createStudent">
-		<property name="name" value="methodStu" />
-		<property name="age" value="12" />
-	</bean>
-	
+  <bean id="methodCreateStu" class="com.zollty.mvcdemo.unittest.di.DiTestController#createStudent">
+    <property name="name" value="methodStu" />
+    <property name="age" value="12" />
+  </bean>
+
 </beans>

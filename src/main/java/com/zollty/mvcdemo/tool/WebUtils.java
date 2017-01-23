@@ -2,7 +2,7 @@ package com.zollty.mvcdemo.tool;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.zollty.util.ExceptionUtils;
+import org.jretty.util.ExceptionUtils;
 
 import com.zollty.mvcdemo.tool.json.SimpleJsonWrapper;
 
