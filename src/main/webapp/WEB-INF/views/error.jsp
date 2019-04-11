@@ -1,5 +1,5 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<%@ page import="org.zollty.util.StringUtils, org.zollty.util.ExceptionUtils"%>
+<%@ page import="org.jretty.util.StringUtils, org.jretty.util.ExceptionUtils"%>
 
 <%@ include file="/WEB-INF/views/taglibs.jsp"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
