@@ -1,6 +1,7 @@
 ZolltyMVC Framework DEMO ( ZolltyMVC 示例项目 )
 ============================================
 See: https://github.com/zollty/zollty-mvc-demo
+Docs pages: https://github.com/zollty-org/zollty-mvc/tree/master/docs
 
 // ~~ 以下是新手教程。。。。。。
 
